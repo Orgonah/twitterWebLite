@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Posts</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+    <div class="row">
+        <div class="col-sm-4">
+        <h1 style="display:inline" >All Posts</h1>
+        </div>
+
+        <div class="col-sm-4 text-center align-bottom">
+        <p style="display:inline; font-size:25px;" id="t">0 Users</p>
+        <button style="background-color: transparent;" class="ml-3" onclick="refresh()"> 
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+            <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+        </svg>
+        </button>
+        </div>
+
+        <div class="col-sm-4">
+            <a style="display:inline" class="btn btn-primary float-right" href='/Login'>Login</a>
+            <a style="display:inline" class="btn btn-info float-right mr-3" href='/SignUp'>Sign Up</a>
+        </div>
+
+    
+</div>
+    <hr>
+
+    {% for post in posts %}
+        <h2>{{ post.title }}</h2>
+        {% if post.author %}
+            <small> Written by {{ post.author }} on {{ post.date_posted }}</small>
+        {% else %}
+            <small> Written by Unknown on {{ post.date_posted }}</small>
+        {% endif %}
+        <p style="white-space:pre-wrap">{{ post.content }}</p>
+        <br>
+        <hr>
+        <br>
+    {% endfor%}
+
+{% endblock %}

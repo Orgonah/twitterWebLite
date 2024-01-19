@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Welcome!</title> 
+{% endblock %}
+
+{% block body %}
+<br>
+<div>
+    <h1 style="display:inline">Welcome {{name}}</h1>
+    <a style="display:inline" class="btn btn-success float-right" href="/" >Homepage</a>
+    <form action="/" class="submit" method="post" style="display:inline">
+        <input style="display:inline" name="log out" type="submit" class="btn btn-warning float-right mr-3" id="log out" value="Log Out">
+    </form>
+</div>
+{% endblock %}

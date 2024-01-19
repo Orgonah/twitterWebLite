@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<head>
+<title>Sign Up</title>
+<link rel="icon" href="http://www.phpkida.com/wp-content/uploads/2015/11/phpkida-new-logo.png" sizes="192x192" />
+<link href="static\css\main.css" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67816487-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+<div style="width:auto; height:100px; margin:auto; float:none; margin-bottom:10px; text-align:center; clear:both;">
+<script id="mNCC" language="javascript">
+   medianet_width = "300";
+   medianet_height = "250";
+   medianet_crid = "161248824";
+   medianet_versionId = "111299";
+   (function() {
+       var isSSL = 'https:' == document.location.protocol;
+       var mnSrc = (isSSL ? 'https:' : 'http:') + '//contextual.media.net/nmedianet.js?cid=8CUB5N9Q1' + (isSSL ? '&https=1' : '');
+       document.write('<scr' + 'ipt type="text/javascript" id="mNSC" src="' + mnSrc + '"></scr' + 'ipt>');
+   })();
+</script>
+</div>
+<div class="">
+  <div class="phpkida-main">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong class="text-dark">{{message}}</strong>
+        <button type="button" class="close bg-dark" data-dismiss="alert" aria-label="Close ">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <br>
+      </div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+	<h2>Register Now</h2>
+		<form action="/Login" method="post">
+			<input type="text" class="ggg" id="Name" name="Name" placeholder="NAME" required="">
+			<input type="email" class="ggg" id="Email" name="Email" placeholder="E-MAIL" required="">
+			<!-- <input type="text" class="ggg" name="Phone" placeholder="PHONE" required=""> -->
+			<input type="password" class="ggg" id="Password" name="Password" placeholder="PASSWORD" required="">
+			
+				<div class="clearfix"></div>
+				<input type="submit" value="submit" name="register">
+		</form>
+		<p>Already Registered? <a href="/Login">Login</a></p>
+</div>
+</div>
+</body>
+</html>

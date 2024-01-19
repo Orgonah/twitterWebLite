@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit Post</title> 
+<style>
+*{
+    color: #ffffff;
+}
+html, body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 100%;
+    overflow-x: hidden;
+    background: rgb(0,60,6);
+    background: linear-gradient(90deg, rgba(0,60,6,1) 0%, rgba(4,3,54,1) 50%, rgba(68,0,131,1) 98%);
+	background-size:cover;
+}
+</style>
+{% endblock %}
+
+{% block body %}
+<h1>Editing Post</h1>
+
+    <hr>
+    <h2>Edit:</h2>
+    <form action='/edit/{{post.id}}' method='POST'>
+        <label for="title">Title:</label>
+        <input class="form-control" type="text" name='title' id='title' value="{{ post.title }}" aria-label="Enter Title">
+        <br>
+        <label for="content">Post:</label>
+        <textarea class="form-control" name='content' id="content" aria-label="Enter Content" rows="3">{{ post.content }}</textarea>
+        <br>
+        <input type='submit' value='Save' style="color: black;">
+    </form>
+    <hr>
+{% endblock %}
